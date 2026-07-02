@@ -1,3 +1,4 @@
+import { CitiesSection } from "@/components/cities-section"
 import { HeroSection } from "@/components/hero-section"
 import { ServicesSection } from "@/components/services-section"
 import { ReviewsSection } from "@/components/reviews-section"
