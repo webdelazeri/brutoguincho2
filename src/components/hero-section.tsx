@@ -36,7 +36,7 @@ export const HeroSection = () => {
           
           <div className="space-y-8 mb-12">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight leading-tight text-foreground animate-fade-in">
-              Guincho 24h em Lajeado e Região
+              Guincho 24h Vale do Taquari
             </h1>
             
             <div className="flex flex-wrap justify-center gap-3 mb-6">
