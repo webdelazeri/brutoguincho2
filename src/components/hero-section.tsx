@@ -46,12 +46,9 @@ export const HeroSection = () => {
               <span className="feature-badge">Transporte seguro</span>
             </div>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              "Atendemos com resgate ágil, cobrindo com excelência o Vale do Taquari.
-              Nossa base em Lajeado permite chegada rápida nas cidades de:
-              Estrela, Arroio do Meio, Cruzeiro do Sul, Encantado, Teutônia, Venâncio Aires, Roca Sales,
-              Colinas, Fazenda Vilanova, Marques de Souza, Capitão,Travesseiro, Paverama, Imigrante, Taquari,
-               Bom Retiro do Sul, Pouso Novo, Poço das Antas, Progresso e Santa Clara do Sul.
+<p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Serviço profissional de guincho e reboque disponível 24 horas por dia. 
+              Atendemos toda a região do Vale do Taquari com rapidez e segurança.
             </p>
           </div>
           
