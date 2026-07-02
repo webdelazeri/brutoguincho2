@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#22c55e" />
+    <title>Guincho Vale do Taquari - Atendimento Imediato</title>
+    <meta name="description" content="Guincho 24h Vale do Taquari. Atendimento imediato, chegada rápida, preço justo. Serviços de guincho e reboque para carros e motos." />
+    <meta name="keywords" content="guincho, reboque, 24 horas, Lajeado, Arroio do Meio, Estrela, emergência, carro, moto" />
+    <meta name="author" content="Guincho 24h Lajeado" />
+
+    <meta property="og:title" content="Guincho 24h em Lajeado e Região - Atendimento Imediato" />
+    <meta property="og:description" content="Atendemos com resgate ágil, cobrindo com excelência o Vale do Taquari. Nossa base em Lajeado permite chegada rápida nas cidades de: Estrela, Arroio do Meio, Cruzeiro do Sul, Encantado, Teutônia, Venâncio Aires, Roca Sales, Colinas, Fazenda Vilanova, Marques de Souza, Capitão, Travesseiro, Paverama, Imigrante, Taquari, Bom Retiro do Sul, Pouso Novo, Poço das Antas, Progresso e Santa Clara do Sul." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Guincho 24h Lajeado" />
+    <meta name="twitter:description" content="Atendimento 24h • (51) 99875-4146" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16684407685"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-16684407685');
+    </script>
+
+    <!-- Conversão Google Ads — Clique no WhatsApp (ouça todos os links de WhatsApp) -->
+    <script>
+      // Se o label da sua conversão for outro, troque aqui:
+      const ADS_SEND_TO = 'AW-16684407685/OMohC1nNhYsbEIW35M-';
+
+      // Dispara a conversão e, quando necessário, navega após o ping
+      function fireWhatsConversionAndMaybeNavigate(href, sameTab) {
+        try {
+          if (typeof gtag === 'function') {
+            let navigated = false;
+            const cb = function () {
+              if (sameTab && !navigated && href) {
+                navigated = true;
+                window.location.href = href;
+              }
+            };
+            gtag('event', 'conversion', { send_to: ADS_SEND_TO, event_callback: cb });
+            // Fallback: garante navegação se o callback não ocorrer
+            if (sameTab && href) setTimeout(() => { if (!navigated) window.location.href = href; }, 250);
+          } else if (sameTab && href) {
+            window.location.href = href;
+          }
+        } catch (_) {
+          if (sameTab && href) window.location.href = href;
+        }
+      }
+
+      // Adiciona listener a todos os links de WhatsApp do site
+      document.addEventListener('DOMContentLoaded', function () {
+        const sel = 'a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href^="whatsapp://"]';
+        document.querySelectorAll(sel).forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            const href = link.getAttribute('href');
+            const target = (link.getAttribute('target') || '').toLowerCase();
+            const opensNewTab = target === '_blank';
+
+            if (!opensNewTab) {
+              // Mesma aba: segura a navegação até enviar o evento
+              e.preventDefault();
+              fireWhatsConversionAndMaybeNavigate(href, true);
+            } else {
+              // Nova aba: apenas dispara a conversão
+              fireWhatsConversionAndMaybeNavigate(null, false);
+            }
+          }, { capture: true });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
