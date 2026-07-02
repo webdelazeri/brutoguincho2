@@ -1,77 +1,53 @@
-import { HeroSection } from "@/components/hero-section"
-import { CitiesSection } from "@/components/cities-section"
-import { ServicesSection } from "@/components/services-section"
-import { ReviewsSection } from "@/components/reviews-section"
-import { FooterSection } from "@/components/footer-section"
-import { MobileCTA } from "@/components/mobile-cta"
-import { useEffect } from "react"
-const Index = () => {
-  useEffect(() => {
-    // Add structured data for SEO
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Guincho 24h Lajeado",
-      "description": "Serviços de guincho e reboque 24 horas para carros e motos",
-      "telephone": "+55 51 99875-4146",
-      "url": "https://guincho24hlajeado.com",
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": -29.4669,
-          "longitude": -51.9614
-        },
-        "geoRadius": "50000"
-      },
-      "areaServed": [
-        "Lajeado", "Estrela", "Arroio do Meio", "Cruzeiro do Sul", "Encantado", 
-        "Teutônia", "Venâncio Aires", "Roca Sales", "Colinas", "Fazenda Vilanova", 
-        "Marques de Souza", "Capitão", "Travesseiro", "Paverama", "Imigrante", 
-        "Taquari", "Bom Retiro do Sul", "Pouso Novo", "Poço das Antas", "Progresso", 
-        "Santa Clara do Sul"
-      ],
-      "openingHours": "Mo-Su 00:00-23:59",
-      "priceRange": "$$",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Serviços de Guincho",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Guincho 24 horas",
-              "description": "Serviço de guincho para carros e motos"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Reboque 24 horas",
-              "description": "Serviço de reboque para veículos"
-            }
-          }
-        ]
-      }
-    }
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.text = JSON.stringify(structuredData)
-    document.head.appendChild(script)
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+import { MapPin } from "lucide-react"
+
+const cities = [
+  "Lajeado",
+  "Estrela",
+  "Arroio do Meio",
+  "Cruzeiro do Sul",
+  "Encantado",
+  "Teutônia",
+  "Venâncio Aires",
+  "Roca Sales",
+  "Colinas",
+  "Fazenda Vilanova",
+  "Marques de Souza",
+  "Capitão",
+  "Travesseiro",
+  "Paverama",
+  "Imigrante",
+  "Taquari",
+  "Bom Retiro do Sul",
+  "Pouso Novo",
+  "Poço das Antas",
+  "Progresso",
+  "Santa Clara do Sul",
+]
+
+export const CitiesSection = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <HeroSection />
-      <CitiesSection />
-      <ServicesSection />
-      <ReviewsSection />
-      <FooterSection />
-    </div>
-  );
-};
-export default Index;
+    <section className="py-16 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="section-title mb-4">
+          Cidades Atendidas
+        </h2>
+        <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-12 leading-relaxed">
+          Nossa base em Lajeado permite chegada rápida em toda a região do Vale do Taquari.
+          Confira as cidades onde oferecemos atendimento de guincho e reboque 24 horas:
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          {cities.map((city) => (
+            <span
+              key={city}
+              className="inline-flex items-center gap-2 bg-card/60 backdrop-blur-sm border border-border/30 rounded-full px-4 py-2 text-sm md:text-base text-foreground hover:border-primary/40 hover:bg-primary/10 transition-colors duration-300"
+            >
+              <MapPin className="h-4 w-4 text-primary shrink-0" />
+              {city}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
