@@ -1,11 +1,10 @@
-import { CitiesSection } from "@/components/cities-section"
 import { HeroSection } from "@/components/hero-section"
+import { CitiesSection } from "@/components/cities-section"
 import { ServicesSection } from "@/components/services-section"
 import { ReviewsSection } from "@/components/reviews-section"
 import { FooterSection } from "@/components/footer-section"
 import { MobileCTA } from "@/components/mobile-cta"
 import { useEffect } from "react"
-
 const Index = () => {
   useEffect(() => {
     // Add structured data for SEO
@@ -26,9 +25,11 @@ const Index = () => {
         "geoRadius": "50000"
       },
       "areaServed": [
-        "Lajeado", "Arroio do Meio", "Estrela", "Cruzeiro do Sul", "Encantado", 
-        "Teutônia", "Roca Sales", "Colinas", "Fazenda Vilanova", "Marques de Souza", 
-        "Capitão", "Travesseiro", "Paverama", "Imigrante"
+        "Lajeado", "Estrela", "Arroio do Meio", "Cruzeiro do Sul", "Encantado", 
+        "Teutônia", "Venâncio Aires", "Roca Sales", "Colinas", "Fazenda Vilanova", 
+        "Marques de Souza", "Capitão", "Travesseiro", "Paverama", "Imigrante", 
+        "Taquari", "Bom Retiro do Sul", "Pouso Novo", "Poço das Antas", "Progresso", 
+        "Santa Clara do Sul"
       ],
       "openingHours": "Mo-Su 00:00-23:59",
       "priceRange": "$$",
@@ -55,25 +56,22 @@ const Index = () => {
         ]
       }
     }
-
     const script = document.createElement('script')
     script.type = 'application/ld+json'
     script.text = JSON.stringify(structuredData)
     document.head.appendChild(script)
-
     return () => {
       document.head.removeChild(script)
     }
   }, [])
-
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <CitiesSection />
       <ServicesSection />
       <ReviewsSection />
       <FooterSection />
     </div>
   );
 };
-
 export default Index;
